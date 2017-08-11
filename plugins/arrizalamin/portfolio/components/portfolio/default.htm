@@ -1,13 +1,10 @@
-<div class="container">
+<div class="container portfolio">
     <div class="row">
         {% for item in __SELF__.portfolio %}
         <div class="col-lg-4">
-	  {% if item.video_url %}
-	  <iframe width="560" height="315" src="{{ item.video_url }}" frameborder="0" allowfullscreen></iframe>
-          {% endif %}
-	  
+
             {% if item.images|length > 0 %}
-            <div>
+            <div class="portfolio-img">
                 {% set image = item.images.first %}
                 <a href="{{ item.pageUrl }}">
                     <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
@@ -15,19 +12,21 @@
             </div>
             {% endif %}
             <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
-            <small>posted {{ item.created_at|date('j m Y') }} in <a href="{{ item.category.pageUrl }}">{{ item.category.name }}</a></small>
+            <small>posted {{ item.created_at|date('j m Y') }}</small>
+            <div class="portfolio-tags">
             {% if item.tags|length > 0 %}
-            <div>
                 {% for tag in item.tags %}
                 <a href="{{ tag.pageUrl }}"><span class="label label-primary">{{ tag.name }}</span></a>
                 {% endfor %}
-            </div>
             {% endif %}
-            {% if item.description %}
+            </div>
+            <div class="portfolio-short-description">
+            {% if item.short_description %}
             <p>
-                {{ item.description|raw }}
+                {{ item.short_description|raw }}
             </p>
             {% endif %}
+            </div>
         </div>
         {% endfor %}
     </div>
