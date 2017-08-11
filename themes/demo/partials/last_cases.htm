@@ -1,0 +1,16 @@
+[portfolio]
+category = 1
+itemsPerPage = 3
+order = "asc"
+pageNumber = "{{ :page }}"
+selectedTag = "{{ :selected_tag }}"
+selectedCat = "{{ :selected_cat }}"
+catListPage = 404
+itemPage = "case"
+tagListPage = 404
+==
+<div class="section portfolio" data-anchor="cases">
+    <div class="inner-page">
+        {% component 'portfolio' %}
+    </div>
+</div>

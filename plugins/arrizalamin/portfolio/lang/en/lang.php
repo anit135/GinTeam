@@ -146,6 +146,7 @@ return [
             'category' => 'Category',
             'tags' => 'Tags',
             'video_url' => 'Video URL',
+            'publish_at' => 'Date of completion'
         ],
         'category' => [
             'id' => 'ID',
@@ -167,7 +168,9 @@ return [
             'description' => 'Description',
             'images' => 'Images',
             'url' => 'URL',
-            'video_url' => 'Video URL'
+            'video_url' => 'Video URL',
+            'short_description' => 'Short description',
+            'publish_at' => 'Date of completion'
         ],
         'category' => [
             'name' => 'Name',

@@ -54,12 +54,12 @@ class Plugin extends PluginBase
                         'icon' => 'icon-certificate',
                         'url' => Backend::url('arrizalamin/portfolio/items'),
                     ],
-                    'categories' => [
-                        'permissions' => ['arrizalamin.portfolio.access_portfolio'],
-                        'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.categories',
-                        'icon' => 'icon-folder',
-                        'url' => Backend::url('arrizalamin/portfolio/categories'),
-                    ],
+//                    'categories' => [
+//                        'permissions' => ['arrizalamin.portfolio.access_portfolio'],
+//                        'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.categories',
+//                        'icon' => 'icon-folder',
+//                        'url' => Backend::url('arrizalamin/portfolio/categories'),
+//                    ],
                     'tags' => [
                         'permissions' => ['arrazalamin.portfolio.access_portfolio'],
                         'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.tags',

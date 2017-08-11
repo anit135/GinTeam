@@ -1,38 +1,53 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
     title:
-        label: arrizalamin.portfolio::lang.fields.item.title
+        label: 'arrizalamin.portfolio::lang.fields.item.title'
+        oc.commentPosition: ''
         span: left
+        type: text
     slug:
-        label: arrizalamin.portfolio::lang.fields.item.slug
+        label: 'arrizalamin.portfolio::lang.fields.item.slug'
+        oc.commentPosition: ''
         span: right
         preset:
             field: title
             type: slug
-    category:
-        label: arrizalamin.portfolio::lang.fields.item.category
-        span: left
-        type: relation
-        nameFrom: name
+        type: text
+    published_at:
+        label: 'arrizalamin.portfolio::lang.fields.item.publish_at'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
     url:
-        label: arrizalamin.portfolio::lang.fields.item.url
-        type: text
+        label: 'arrizalamin.portfolio::lang.fields.item.url'
+        oc.commentPosition: ''
         span: right
-    video_url:
-        label: arrizalamin.portfolio::lang.fields.item.video_url
         type: text
-    tagbox:
-        label: arrizalamin.portfolio::lang.fields.item.tags
-        type: owl-tagbox
-        nameFrom: name
-        slugify: true
+    short_description:
+        label: 'arrizalamin.portfolio::lang.fields.item.short_description'
+        oc.commentPosition: ''
+        span: full
+        type: text
     description:
-        label: arrizalamin.portfolio::lang.fields.item.description
+        label: 'arrizalamin.portfolio::lang.fields.item.description'
+        size: ''
+        oc.commentPosition: ''
+        span: full
         type: richeditor
     images:
-        label: arrizalamin.portfolio::lang.fields.item.images
-        type: fileupload
+        label: 'arrizalamin.portfolio::lang.fields.item.images'
+        oc.commentPosition: ''
         mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    tags:
+        label: 'arrizalamin.portfolio::lang.controller.form.tags.title'
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation

@@ -12,7 +12,7 @@
             </div>
             {% endif %}
             <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
-            <small>posted {{ item.created_at|date('j m Y') }}</small>
+            <small>implement on {{ item.published_at|date('j m Y') }}</small>
             <div class="portfolio-tags">
             {% if item.tags|length > 0 %}
                 {% for tag in item.tags %}

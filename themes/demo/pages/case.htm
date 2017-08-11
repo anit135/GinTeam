@@ -1,0 +1,36 @@
+title = "Case"
+url = "/case/:item_slug"
+layout = "default"
+is_hidden = 0
+
+[item]
+item = "proactively"
+itemSlug = "{{ :item_slug }}"
+catListPage = 404
+tagListPage = 404
+==
+<div class="cases">
+    <div class="inner-page">
+        <!-- header begin -->
+        <div class="header">
+            <div class="logo"><a href="/#home"><img alt="" src="/themes/demo/assets/src/logo-small.png"></a></div>
+            <ul class="nav">
+                <li data-menuanchor="home"><a href="/#home">Home</a></li>
+                <li data-menuanchor="services"><a href="/#services">Services</a></li>
+                <li><a class="current" href="{{ 'cases'|page }}">Cases</a></li>
+                <li data-menuanchor="contacts"><a href="/#contacts">Contacts</a></li>
+            </ul>
+        </div>
+        <!-- header end -->
+        <!-- content end -->
+        <div class="content">
+            {% component 'item' %}
+        </div>
+        <!-- content end -->
+        <!-- footer begin -->
+        <div class="footer">
+            GinTeam � 2013
+        </div>
+        <!-- footer end -->
+    </div>
+</div>

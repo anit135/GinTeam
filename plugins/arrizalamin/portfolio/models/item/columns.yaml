@@ -1,16 +1,13 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     title:
-        label: arrizalamin.portfolio::lang.columns.item.title
+        label: 'arrizalamin.portfolio::lang.columns.item.title'
+        type: text
         searchable: true
-    category:
-        label: arrizalamin.portfolio::lang.columns.item.category
-        relation: category
-        select: name
     tags:
-        label: arrizalamin.portfolio::lang.columns.item.tags
-        relation: tags
+        label: 'arrizalamin.portfolio::lang.columns.item.tags'
+        type: text
         select: name
+        relation: tags
+    published_at:
+        label: 'arrizalamin.portfolio::lang.fields.item.publish_at'
+        type: date

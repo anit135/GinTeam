@@ -1,0 +1,34 @@
+title = "Cases"
+url = "/cases"
+layout = "default"
+is_hidden = 0
+
+[portfolio]
+category = 0
+itemsPerPage = 6
+order = "asc"
+pageNumber = "{{ :page }}"
+selectedTag = "{{ :selected_tag }}"
+selectedCat = "{{ :selected_cat }}"
+catListPage = 404
+itemPage = "case"
+tagListPage = 404
+==
+<div class="cases">
+    <div class="inner-page">
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% component 'portfolio' %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+    </div>
+</div>

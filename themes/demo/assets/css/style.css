@@ -91,8 +91,6 @@ ul, ol {
 	height:100%;
 	width:100%;
 	min-height:1050px;
-	/*height:100% !important;*/
-	/*height:1050px;*/
 	position:relative;
 }
 
@@ -110,7 +108,11 @@ ul, ol {
 
 .cases {
 	background: #333;
-	min-height: 100%;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	position: fixed;
+	width: 100%;
 }
 
 
@@ -1023,7 +1025,7 @@ h4 {
 .portfolio .line-ver { background-position:273px top;}
 .portfolio .line-ver1 { background-position:584px top;}
 .portfolio .portfolio-img {
-	height: 250px;
+	height: 220px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1033,55 +1035,4 @@ h4 {
 }
 .portfolio .portfolio-short-description {
 	height: 60px;
-}
-
-
-/*----- cases -----*/
-.cases .work__title {
-	font-size: 20px;
-	color: #f4f4f4;
-	margin: 0 0 10px;
-}
-
-.cases .work__button {
-	font-size: 20px;
-	padding:0;
-}
-
-.cases .work__subtitle {
-	font-size: 13px;
-	text-transform: none;
-	color: #999;
-	margin: 0 0 15px;
-}
-
-/*----- переопределение стиля work__button -----*/
-.work_button {
-	-moz-transition: background-color 0.2s, color 0.2s;
-	-o-transition: background-color 0.2s, color 0.2s;
-	-webkit-transition: background-color 0.2s, color 0.2s;
-	transition: background-color 0.2s, color 0.2s;
-	font-family: 'Open Sans';
-	font-size: 18px;
-	font-weight: 300;
-	display: block;
-	width: 80%;
-	margin: 0 auto;
-	padding: 5px 10px;
-	border: 2px solid #fff;
-	color: #fff
-}
-
-@media (min-width: 480px) {
-	.work_button {
-		width: 50%;
-		padding: 10px 15px
-	}
-}
-
-.work_button:hover {
-	background-color: #ee3b86;
-	background-color: rgba(238, 59, 134, 0.5);
-	color: #fff;
-	text-decoration: none
 }
