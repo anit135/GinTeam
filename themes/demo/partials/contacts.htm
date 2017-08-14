@@ -1,3 +1,4 @@
+[JanVince\SmallContactForm\Components\SmallContactForm contactForm]
 ==
 <!-- contacts page begin -->
     <div class="section contacts" data-anchor="contacts">
@@ -30,6 +31,7 @@
                         <div class="col-2">
                             <h2>Contact form</h2>
                             <form action="" id="contacts-form">
+                            {% component 'contactForm' %}
                                 <fieldset>
                                     <label><input type="text" value="Name:"
                                                   onfocus="if(this.value==&#39;Name:&#39;){this.value=&#39;&#39;}"
@@ -43,6 +45,7 @@
                                     <textarea cols="" rows=""
                                               onfocus="if(this.value==&#39;Message:&#39;){this.value=&#39;&#39;}"
                                               onblur="if(this.value==&#39;&#39;){this.value=&#39;Message:&#39;}">Message:</textarea>
+                                    <div class="g-recaptcha" data-sitekey="6LcLwiwUAAAAAMjlQUrLQLLVpA9xexK1Cq1kxF7o"></div>
                                     <div class="alignright"><a href="#" class="link1">Send</a> &nbsp; &nbsp;<a href="#"
                                                                                                                class="link1">Reset</a>
                                     </div>
