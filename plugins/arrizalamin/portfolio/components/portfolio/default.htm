@@ -1,8 +1,38 @@
-<div class="container portfolio">
+{% set useAsBlock = __SELF__.getProperties.useAsPreviewBlock %}
+
+{% if useAsBlock %}
+<div class="portfolio line-ver">
+    <div class="row line-ver1">
+        {% for item in __SELF__.portfolio %}
+        <div class="col-md-4">
+            {% if item.images|length > 0 %}
+            <div class="portfolio-last-img">
+                {% set image = item.images.first %}
+                <a href="{{ item.pageUrl }}">
+                    <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+                </a>
+            </div>
+            {% endif %}
+            <div class="portfolio-last-title">
+                <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
+            </div>
+            {% if item.tags|length > 0 %}
+            <div class="portfolio-last-tags">
+                {% for tag in item.tags %}
+                <a href="{{ tag.pageUrl }}"><span class="label label-primary">{{ tag.name }}</span></a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{{ 'cases'|page }}" class="button-last-cases">Show All</a>
+</div>
+{% else %}
+<div class="portfolio">
     <div class="row">
         {% for item in __SELF__.portfolio %}
         <div class="col-lg-4">
-
             {% if item.images|length > 0 %}
             <div class="portfolio-img">
                 {% set image = item.images.first %}
@@ -14,18 +44,18 @@
             <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
             <small>implement on {{ item.published_at|date('j m Y') }}</small>
             <div class="portfolio-tags">
-            {% if item.tags|length > 0 %}
+                {% if item.tags|length > 0 %}
                 {% for tag in item.tags %}
                 <a href="{{ tag.pageUrl }}"><span class="label label-primary">{{ tag.name }}</span></a>
                 {% endfor %}
-            {% endif %}
+                {% endif %}
             </div>
             <div class="portfolio-short-description">
-            {% if item.short_description %}
-            <p>
-                {{ item.short_description|raw }}
-            </p>
-            {% endif %}
+                {% if item.short_description %}
+                <p>
+                    {{ item.short_description|raw }}
+                </p>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
@@ -36,7 +66,8 @@
         <div class="col-sm-12">
             <ul class="pagination">
                 {% if __SELF__.portfolio.currentPage > 1 %}
-                <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage - 1) }) }}">&larr; Prev</a></li>
+                <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage - 1) }) }}">&larr;
+                    Prev</a></li>
                 {% endif %}
 
                 {% for page in 1..__SELF__.portfolio.lastPage %}
@@ -46,11 +77,12 @@
                 {% endfor %}
 
                 {% if __SELF__.portfolio.lastPage > __SELF__.portfolio.currentPage %}
-                <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage + 1) }) }}">Next &rarr;</a></li>
+                <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage + 1) }) }}">Next
+                    &rarr;</a></li>
                 {% endif %}
             </ul>
         </div>
     </div>
     {% endif %}
 </div>
-
+{% endif %}

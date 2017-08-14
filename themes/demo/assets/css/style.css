@@ -170,7 +170,7 @@ h2 {
 	font-size:20px;
 	line-height:1.2em;
 	color:#f4f4f4;
-	margin-bottom:17px;
+	/*margin-bottom:17px;*/
     font-weight: normal;
 	margin-top: 0;
 }
@@ -1023,16 +1023,41 @@ h4 {
 
 /*----- portfolio -----*/
 .portfolio .line-ver { background-position:273px top;}
-.portfolio .line-ver1 { background-position:584px top;}
-.portfolio .portfolio-img {
+.portfolio .line-ver1 { background-position:575px top;}
+.portfolio-img, .portfolio-last-img {
 	height: 220px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 }
-.portfolio .portfolio-tags {
+.portfolio-tags {
 	height: 20px;
 }
-.portfolio .portfolio-short-description {
+.portfolio-short-description {
 	height: 60px;
+}
+.portfolio-last-title h2 {
+	color: #333 !important;
+}
+.button-last-cases {
+	background: url('/themes/demo/assets/src/nav-bg.png') no-repeat left top;
+	float: right;
+	width: 140px;
+	color: #f4f4f4;
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 46px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0;
+}
+.button-last-cases:hover {
+	background:url('../src/nav-bg.png') no-repeat left -46px;
+	color:#333;
+}
+.portfolio-last-tags, .portfolio-last-title, .portfolio-last-img {
+	margin: auto;
+	max-width: 241px;
 }

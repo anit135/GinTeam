@@ -38,6 +38,13 @@ class Portfolio extends ComponentBase
     public $catListPage;
 
     /**
+     * Reference to the page where portfolio looks like a preview block
+     *
+     * @var
+     */
+    public $useAsPreviewBlock;
+
+    /**
      * Component Details
      *
      * @return array
@@ -45,7 +52,7 @@ class Portfolio extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'arrizalamin.portfolio::lang.components.portfolio.name',
+            'name' => 'arrizalamin.portfolio::lang.components.portfolio.name',
             'description' => 'arrizalamin.portfolio::lang.components.portfolio.description'
         ];
     }
@@ -64,12 +71,16 @@ class Portfolio extends ComponentBase
                 'default' => '1',
                 'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.placeholder'
             ],
+            'useAsPreviewBlock' => [
+                'title' => 'Use As Preview Block',
+                'type' => 'checkbox'
+            ],
             'itemsPerPage' => [
-                'title'             => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.title',
-                'type'              => 'string',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.title',
+                'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.validationMessage',
-                'default'           => '6',
+                'default' => '6',
             ],
             'order' => [
                 'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.order.title',
@@ -99,25 +110,25 @@ class Portfolio extends ComponentBase
                 'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.advanced'
             ],
             'catListPage' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.title',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.title',
                 'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.description',
-                'type'        => 'dropdown',
-                'default'     => 'portfolio/category',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
+                'type' => 'dropdown',
+                'default' => 'portfolio/category',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
             ],
             'itemPage' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemPage.title',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemPage.title',
                 'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemPage.description',
-                'type'        => 'dropdown',
-                'default'     => 'portfolio/item',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
+                'type' => 'dropdown',
+                'default' => 'portfolio/item',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
             ],
             'tagListPage' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.title',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.title',
                 'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.description',
-                'type'        => 'dropdown',
-                'default'     => 'portfolio/tag',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
+                'type' => 'dropdown',
+                'default' => 'portfolio/tag',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
             ],
         ];
     }
@@ -186,29 +197,41 @@ class Portfolio extends ComponentBase
         $this->itemPage = $this->page['itemPage'] = $this->property('itemPage');
         $this->tagListPage = $this->page['tagListPage'] = $this->property('tagListPage');
         $this->catListPage = $this->page['catListPage'] = $this->property('catListPage');
+        $this->useAsPreviewBlock = $this->page['useAsPreviewBlock'] = $this->property('useAsPreviewBlock');
 
         // find the correct property to select the items with
         $object = null;
-        if($this->property('selectedTag') != null){
+        if ($this->property('selectedTag') != null) {
             $object = $this->loadItemsByTag($this->property('selectedTag'));
-        }elseif($this->property('selectedCat') != null){
+        } elseif ($this->property('selectedCat') != null) {
             $object = $this->loadItemsByCategory($this->property('selectedCat'), true);
-        }elseif($this->property('category') != null) {
+        } elseif ($this->property('category') != null) {
             $object = $this->loadItemsByCategory($this->property('category'));
         }
-
+//echo '<pre>';
+//        var_dump($this->getProperties());
+//        echo '</pre>';
         // check if a valid object has been created
-        if( !$object ){
-            // display all items
-            $this->portfolio = Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
-        }else{
-            // show the items in the portfolio
-            $this->portfolio = $object->items()
-                ->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        if (!$object) {
+            if ($this->property('useAsPreviewBlock')) {
+                // display items ordered by published date
+                $this->portfolio = Item::orderBy('published_at', $this->property('order'))->limit($this->property('itemsPerPage'))->get();
+            } else {
+                // display all items
+                $this->portfolio = Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+            }
+        } else {
+            if ($this->property('useAsPreviewBlock')) {
+                // show items in block ordered by published date
+                $this->portfolio = $object->items()->orderBy('published_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+            } else {
+                // show the items in the portfolio
+                $this->portfolio = $object->items()->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+            }
         }
 
         // Add url helper to the items
-        if($this->portfolio != null) {
+        if ($this->portfolio != null) {
             $this->portfolio = $this->updatePageUrls($this->portfolio);
         }
     }
@@ -222,9 +245,9 @@ class Portfolio extends ComponentBase
      */
     protected function loadItemsByCategory($selectedCategory, $bySlug = false)
     {
-        if($bySlug){
+        if ($bySlug) {
             $category = Category::where('slug', '=', $selectedCategory)->first();
-        }else{
+        } else {
             $category = Category::find($selectedCategory);
         }
 
@@ -253,8 +276,7 @@ class Portfolio extends ComponentBase
     protected function updatePageUrls($items)
     {
         //Add a "url" helper attribute for linking to each item
-        $items->each(function($item)
-        {
+        $items->each(function ($item) {
             $item->setPageUrl($this->itemPage, $this->controller);
 
             $item->tags->each(function ($tag) {
