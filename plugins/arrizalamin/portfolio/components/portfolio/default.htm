@@ -19,7 +19,9 @@
             {% if item.tags|length > 0 %}
             <div class="portfolio-last-tags">
                 {% for tag in item.tags %}
-                <a href="{{ tag.pageUrl }}"><span class="label label-primary">{{ tag.name }}</span></a>
+                <!--<a href="{{ tag.pageUrl }}">-->
+                    <span class="label label-primary">{{ tag.name }}</span>
+                <!--</a>-->
                 {% endfor %}
             </div>
             {% endif %}
@@ -46,7 +48,9 @@
             <div class="portfolio-tags">
                 {% if item.tags|length > 0 %}
                 {% for tag in item.tags %}
-                <a href="{{ tag.pageUrl }}"><span class="label label-primary">{{ tag.name }}</span></a>
+                <!--<a href="{{ tag.pageUrl }}">-->
+                    <span class="label label-primary">{{ tag.name }}</span>
+                <!--</a>-->
                 {% endfor %}
                 {% endif %}
             </div>
