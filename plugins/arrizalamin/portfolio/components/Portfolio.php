@@ -208,9 +208,7 @@ class Portfolio extends ComponentBase
         } elseif ($this->property('category') != null) {
             $object = $this->loadItemsByCategory($this->property('category'));
         }
-//echo '<pre>';
-//        var_dump($this->getProperties());
-//        echo '</pre>';
+
         // check if a valid object has been created
         if (!$object) {
             if ($this->property('useAsPreviewBlock')) {
