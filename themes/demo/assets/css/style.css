@@ -117,7 +117,7 @@ body {
 
 h2 {
     font-weight: normal;
-    margin-top: 0;
+    /*margin-top: 0;*/
     color: #f4f4f4;
     font-size: 20px;
 }
@@ -181,6 +181,7 @@ ul {
 .last-title h2 {
     color: #2c3234;
     font-size: 17px;
+    margin-top: 0;
 }
 
 .last-title, .last-tags {
@@ -245,6 +246,7 @@ ul {
 .cases .flex-item a {
     padding-right: 0;
 }
+.cases h1 { color: white; }
 .cases .footer {
     margin-top: 0;
 }
