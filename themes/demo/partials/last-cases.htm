@@ -10,8 +10,31 @@ catListPage = 404
 itemPage = "case"
 tagListPage = 404
 ==
-<div class="section portfolio" data-anchor="cases">
+<div class="section last-cases" data-anchor="cases">
     <div class="inner-page">
-        {% component 'portfolio' %}
+        <!-- header begin -->
+        <div class="header">
+            <div class="logo"><a href="#home"><img alt="" src="themes/demo/assets/src/logo-small-black.png"></a></div>
+            <ul class="nav">
+                <li data-menuanchor="home"><a href="#home">Home</a></li>
+                <li data-menuanchor="services"><a href="#services">Services</a></li>
+                <li data-menuanchor="cases"><a href="/#cases" class="current">Cases</a></li>
+                <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
+            </ul>
+        </div>
+        <!-- header end -->
+        <!-- content end -->
+        <div class="flex-content">
+            {% component 'portfolio' %}
+        </div>
+        <div class="button-last-cases">
+            <a href="/cases/1" >Show All</a>
+        </div>
+        <!-- content end -->
+        <!-- footer begin -->
+        <div class="footer footer-durk">
+            GinTeam � 2013
+        </div>
+        <!-- footer end -->
     </div>
 </div>

@@ -1,5 +1,5 @@
 title = "Cases"
-url = "/cases"
+url = "/cases/:page"
 layout = "default"
 is_hidden = 0
 
@@ -17,18 +17,14 @@ tagListPage = 404
 <div class="cases">
     <div class="inner-page">
         <!-- Header -->
-        <header id="layout-header">
-            {% partial 'header-cases' %}
-        </header>
+        {% partial 'header-cases' %}
 
         <!-- Content -->
-        <section id="layout-content">
+        <div class="flex-content">
             {% component 'portfolio' %}
-        </section>
+        </div>
 
         <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+        {% partial 'site/footer' %}
     </div>
 </div>
