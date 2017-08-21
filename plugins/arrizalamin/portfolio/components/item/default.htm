@@ -1,27 +1,23 @@
 {% set item = __SELF__.item %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            {% for image in item.images %}
-            <div class="col-sm-6">
-                <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
-            </div>
-            {% endfor %}
-        </div>
-        <div class="col-lg-6">
-            <h2>{{ item.title }}</h2>
-            <small>Finished {{ item.created_at|date('j m Y') }}</small>
-            <div>
-                {% for tag in item.tags %}
-                <!--<a href="{{ tag.pageUrl }}">-->
-                    <span class="label label-default">{{ tag.name }}</span>
-                <!--</a>-->
-                {% endfor %}
-            </div>
-            <p>{{ item.description|raw }}</p>
-            {% if item.url %}
-                <a href="http://{{ item.url }}" class="btn btn-default" target="_blank">view project</a>
-            {% endif %}
-        </div>
+<div class="case">
+    {% for image in item.images %}
+    <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+    {% endfor %}
+    <div class="tags">
+        {% for tag in item.tags %}
+        <a href="{{ tag.pageUrl }}">
+            <span class="label label-primary">{{ tag.name }}</span>
+        </a>
+        {% endfor %}
     </div>
+</div>
+<div class="case">
+    <div class="data">
+        <small>Finished {{ item.publish_at|date('j m Y') }}</small>
+    </div>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.description|raw }}</p>
+    {% if item.url %}
+    <a href="http://{{ item.url }}" class="btn btn-default" target="_blank">view</a>
+    {% endif %}
 </div>

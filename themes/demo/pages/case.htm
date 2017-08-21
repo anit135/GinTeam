@@ -7,7 +7,7 @@ is_hidden = 0
 item = "proactively"
 itemSlug = "{{ :item_slug }}"
 catListPage = 404
-tagListPage = 404
+tagListPage = "tag"
 ==
 <div class="cases">
     <div class="inner-page">
@@ -15,14 +15,12 @@ tagListPage = 404
         {% partial 'header-cases' %}
         <!-- header end -->
         <!-- content end -->
-        <div class="content">
+        <div class="flex-content">
             {% component 'item' %}
         </div>
         <!-- content end -->
         <!-- footer begin -->
-        <div class="footer">
-            GinTeam � 2013
-        </div>
+        {% partial 'site/footer' %}
         <!-- footer end -->
     </div>
 </div>

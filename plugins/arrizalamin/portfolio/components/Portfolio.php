@@ -216,7 +216,7 @@ class Portfolio extends ComponentBase
                 $this->portfolio = Item::orderBy('published_at', $this->property('order'))->limit($this->property('itemsPerPage'))->get();
             } else {
                 // display all items
-                $this->portfolio = Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+                $this->portfolio = Item::orderBy('published_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
             }
         } else {
             if ($this->property('useAsPreviewBlock')) {
