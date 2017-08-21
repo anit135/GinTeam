@@ -28,6 +28,7 @@ body {
 
 a, a:hover {
     text-decoration: none;
+    color: #999;
 }
 
 h2 {
@@ -135,11 +136,14 @@ ul {
     padding: 4px 10px 4px 10px;
 }
 
-.text-right {
+.flex-item .text-right {
     float: right;
     color: #999;
 }
 
+.flex-item a:hover  {
+    color: white;
+}
 /*===== footer =====*/
 
 .footer {
