@@ -2,6 +2,8 @@ title = "Offer"
 url = "/offer"
 layout = "default"
 is_hidden = 0
+
+[staticPage]
 ==
 <div class="cases">
     <div class="inner-page">
@@ -9,7 +11,7 @@ is_hidden = 0
         {% partial 'header-offer' %}
 
         <!-- Content -->
-            Offer
+        {% content 'offer' %}
 
         <!-- Footer -->
         {% partial 'site/footer' %}
