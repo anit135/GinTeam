@@ -1,3 +1,7 @@
+[localePicker]
+forceUrl = 0
+
+[viewBag]
 ==
 <!-- Nav -->
 <nav class="header">
@@ -7,5 +11,8 @@
         <li data-menuanchor="services"><a href="/#services">Services</a></li>
         <li><a href="/cases" class="current">Cases</a></li>
         <li data-menuanchor="contacts"><a href="/#contacts">Contacts</a></li>
+        <div class="len">
+            {% component 'localePicker' %}
+        </div>
     </ul>
 </nav>
