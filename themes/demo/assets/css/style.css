@@ -26,9 +26,12 @@ body {
     background: #333;
 }
 
-a, a:hover {
+a {
+    color: white;
+}
+
+a:hover {
     text-decoration: none;
-    color: #999;
 }
 
 h2 {
@@ -40,7 +43,7 @@ h2 {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 .header-home {
@@ -60,18 +63,21 @@ h2 {
 .header .nav li a, .case .btn-default {
     width: 125px;
     color: #f4f4f4;
-    background: url('../src/nav-bg.png') no-repeat left top;
+    /*background: url('../src/nav-bg.png') no-repeat left top;*/
     font-size: 20px;
     line-height: 46px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     padding: 0;
+    background: red;
+    border-radius: 0 8px
 }
 
 .header .nav li a:hover, .header .nav li a.current, .case .btn-default:hover {
-    background: url('../src/nav-bg.png') no-repeat left -46px;
+    /*background: url('../src/nav-bg.png') no-repeat left -46px;*/
     color: #333;
+    background: white;
 }
 
 .form-control {
@@ -88,7 +94,7 @@ h2 {
 .flex-content {
     display: flex;
     justify-content: space-between;
-    height: 240px;
+    height: 275px;
 }
 
 .flex-content-home {
@@ -101,7 +107,8 @@ h2 {
 .flex-content-home h3 {
     color: #2c3234;
     font-size: 40px;
-    margin: 30px 0;
+    margin: 50px 0 5px 0;
+    text-align: right;
 }
 
 .description {
@@ -112,7 +119,7 @@ h2 {
 }
 
 .flex-item {
-    width: 30%;
+    width: 27%;
 }
 
 .line {
@@ -126,6 +133,7 @@ h2 {
     font-weight: normal;
     color: #f4f4f4;
     font-size: 20px;
+    margin: 0 0 15px 0;
 }
 
 ul {
@@ -150,8 +158,39 @@ ul {
     color: #999;
 }
 
-.flex-item a:hover  {
+.contacts .flex-item a {
+    text-decoration: underline;
+}
+
+.contacts .flex-item a:hover  {
     color: white;
+    text-decoration: none;
+}
+
+.contacts input, .contacts textarea {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    /*font: initial;*/
+    padding: 6px;
+    border: 0px;
+    margin-bottom: 6px;
+    font: menu;
+    font-size: 1em;
+}
+
+.contacts #contacts-form label { width: 100%; }
+.contacts textarea { height: 80px; }
+
+.contacts .alignright {
+    font-size: 15px;
+    text-align: right;
+}
+.contacts .alignright a {
+    text-decoration: none;
+}
+
+.contacts .alignright a:hover {
+    text-decoration: underline;
 }
 /*===== footer =====*/
 
@@ -162,7 +201,7 @@ ul {
     background: url('../src/footer-bg1.gif') left top repeat-x;
     padding: 27px 0 20px 0;
     text-align: right;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .home .footer, .last-cases .footer {
@@ -201,8 +240,8 @@ ul {
 .last-title h2 {
     color: #2c3234;
     font-size: 17px;
+    margin-top: 15px;
 }
-
 
 .last-tags a:hover .label-primary {
     background-color: white;
@@ -264,8 +303,9 @@ ul {
     width: 100%;
     height: 100%;
 }
-.cases .flex-item a {
-    padding-right: 0;
+.cases .flex-item a h2 {
+    /*padding-right: 0;*/
+    margin-top: 15px;
 }
 
 .cases .flex-item a:hover h2 {
@@ -330,21 +370,20 @@ ul {
 
 @media screen and (max-width: 905px) {
     .cases .header, .flex-content { justify-content: space-around; }
-    .header .nav li a { width: 94px; font-size: 15px;}
-    #fullpage .logo-big img {width: 100%;}
+    .header .nav li a { width: 94px; font-size: 15px; }
+    #fullpage .logo-big img { width: 100%; }
+    .services .len .form-control { font-size: 15px; }
 }
-@media screen and (max-width: 715px) {
+@media screen and (max-width: 775px) {
     .cases .header { flex-direction: column; align-items: center; }
     .cases .header .logo { padding-bottom: 30px; }
     .cases .header .nav li a { width: 140px; font-size: 20px; }
     #fullpage .header img { width: 200px; }
     #fullpage .flex-content { height: 300px; }
     #fullpage .flex-content-home { height:100%; }
-    .cases .flex-item {
-        width: 300px;
-    }
+    .cases .flex-item { width: 300px; }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 705px) {
     #fullpage .header, .cases .header { flex-direction: column; align-items: center; }
     .cases .header .logo { padding-bottom: 30px; }
     .cases .header .nav li a { width: 95px; font-size: 15px; }
