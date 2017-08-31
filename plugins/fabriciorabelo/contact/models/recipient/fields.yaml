@@ -1,0 +1,13 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  name:
+    label: fabriciorabelo.contact::lang.models.recipient.fields.label.name
+    span: left
+
+  email:
+    label: fabriciorabelo.contact::lang.models.recipient.fields.label.email
+    span: right

@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: fabriciorabelo.contact::lang.controllers.templates.config_form.name
+form: plugins/fabriciorabelo/contact/models/template/fields.yaml
+modelClass: FabricioRabelo\Contact\Models\Template
+defaultRedirect: fabriciorabelo/contact/templates
+
+create:
+    redirect: fabriciorabelo/contact/templates/update/:id
+    redirectClose: fabriciorabelo/contact/templates
+
+update:
+    redirect: fabriciorabelo/contact/templates
+    redirectClose: fabriciorabelo/contact/templates

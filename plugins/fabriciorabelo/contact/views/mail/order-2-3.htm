@@ -1,0 +1,19 @@
+subject = "Avi Cranes Order"
+==
+Hi {{ sender_name }},
+A user left a message on your website at {{ 'now'|date('F, d Y H:i') }}.
+Name: {{ name }}
+Phone / Email: {{ email_phone }}
+Company: {{ phone }}
+
+INFORMATION WE SHOULD KNOW:
+ {{ body }}
+==
+<p>Hi {{ sender_name }},</p>
+<p>A user left a message on your website at {{ 'now'|date('F, d Y H:i') }}.</p>
+<div><strong>Name:</strong> {{ name }}</div>
+<div><strong>Phone / Email:</strong> {{ email_phone }}</div>
+<div><strong>Company:</strong> {{ phone }}</div>
+</br>
+<div><strong>INFORMATION WE SHOULD KNOW:</strong></div>
+<pre> {{ body }} </pre>

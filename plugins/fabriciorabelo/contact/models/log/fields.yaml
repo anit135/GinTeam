@@ -1,0 +1,26 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+  template_id:
+    type: FabricioRabelo\Contact\FormWidgets\TemplateData
+    span: left
+    label: fabriciorabelo.contact::lang.models.log.fields.label.template_id
+
+  sender_agent:
+    type: FabricioRabelo\Contact\FormWidgets\UserAgent
+    span: right
+    label: fabriciorabelo.contact::lang.models.log.fields.label.sender_agent
+
+  sender_ip:
+    span: left
+    label: fabriciorabelo.contact::lang.models.log.fields.label.sender_ip
+
+#  sent_at:
+#    span: right
+#    label: fabriciorabelo.contact::lang.models.log.fields.label.sent_at
+
+  data:
+    type: FabricioRabelo\Contact\FormWidgets\JsonRender
+    label: fabriciorabelo.contact::lang.models.log.fields.label.data

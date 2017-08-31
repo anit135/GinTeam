@@ -1,0 +1,28 @@
+1.0.1:
+    - Initial version
+    - create_tables.php
+    - create_recipients_table.php
+    - create_template_recipents_table.php
+    - create_logs_table.php
+    - create_streams_table.php
+    - create_custom_fields_table.php
+    - seed_all_database.php
+1.0.2:
+    - Updated classes to latest OctoberCMS version
+1.0.3:
+    - Fixed issues with OctoberCMS release candidate version
+    - Added options on component to replace the template recipient box or copy the sent message to other recipient box
+1.0.4:
+    - Fixed issues in log view
+1.0.5:
+    - Fixed redirect after send message
+1.0.6:
+    - Added support to RainLab.Translate to the field Confirmation Text
+1.0.7:
+    - Fixed support to RainLab.Translate
+1.0.8:
+    - Added language Portuguese (Brazil)
+1.0.9:
+    - Fixed missing css on contact log
+1.1.0:
+    - Fixed data-trigger-action issues

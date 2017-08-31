@@ -60,34 +60,42 @@ h2 {
     padding-left: 5px;
 }
 
-.header .nav li a, .case .btn-default {
+.header .nav li a, .case .btn-default, .button-last-cases a {
     width: 125px;
     color: #f4f4f4;
-    /*background: url('../src/nav-bg.png') no-repeat left top;*/
     font-size: 20px;
     line-height: 46px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     padding: 0;
-    background: red;
+    background: #f53502;
     border-radius: 0 8px
 }
 
-.header .nav li a:hover, .header .nav li a.current, .case .btn-default:hover {
-    /*background: url('../src/nav-bg.png') no-repeat left -46px;*/
+.header .nav li a:hover, .header .nav li a.current, .case .btn-default:hover, .button-last-cases a:hover {
     color: #333;
     background: white;
 }
 
-.form-control {
+.len .form-control {
     text-transform: uppercase;
     height: 46px;
+    border-radius: 0 8px;
+    padding: 0px 7px;
+    font-size: 20px;
+    color: #333;
 }
 
 .len {
     width: 74px;
     padding-left: 5px;
+}
+
+form .form-control {
+    border-radius: 0;
+    height: 27px;
+    margin-bottom: 0;
 }
 /*===== home page =====*/
 
@@ -119,7 +127,7 @@ h2 {
 }
 
 .flex-item {
-    width: 27%;
+    width: 28%;
 }
 
 .line {
@@ -158,11 +166,11 @@ ul {
     color: #999;
 }
 
-.contacts .flex-item a {
+.contacts .contact-info a {
     text-decoration: underline;
 }
 
-.contacts .flex-item a:hover  {
+.contacts .contact-info a:hover  {
     color: white;
     text-decoration: none;
 }
@@ -170,7 +178,6 @@ ul {
 .contacts input, .contacts textarea {
     width: 100%;
     color: rgb(51, 51, 51);
-    /*font: initial;*/
     padding: 6px;
     border: 0px;
     margin-bottom: 6px;
@@ -178,6 +185,26 @@ ul {
     font-size: 1em;
 }
 
+.contacts button {
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    border: 0;
+    padding: 0 0 0 20px;
+}
+
+.contacts .btn-clear a {
+    font-size: 15px;
+    padding: 0 0 0 20px;
+    border: 0;
+}
+
+.contacts button[type="submit"]:hover, .contacts .btn-clear a:hover {
+    text-decoration: underline;
+    color: white;
+    background: #333;
+    /*border: 0;*/
+}
 .contacts #contacts-form label { width: 100%; }
 .contacts textarea { height: 80px; }
 
@@ -249,7 +276,7 @@ ul {
 }
 
 .last-cases .last-tags .label-primary {
-    background-color: red;
+    background-color: #f53502;
 }
 
 .last-cases .button-last-cases {
@@ -258,17 +285,31 @@ ul {
     margin-top: 30px;
 }
 
-.button-last-cases a {
-    display: flex;
-    justify-content: center;
-    background: url(/themes/demo/assets/src/nav-bg.png) no-repeat left top;
-    width: 140px;
-    color: #f4f4f4;
-    font-size: 20px;
-    line-height: 46px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
+/*.button-last-cases a {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*background: #f53502;*/
+    /*width: 125px;*/
+    /*color: #f4f4f4;*/
+    /*font-size: 20px;*/
+    /*line-height: 46px;*/
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*padding: 0;*/
+    /*border-radius: 0 8px*/
+
+    /*width: 125px;*/
+    /*color: #f4f4f4;*/
+    /*font-size: 20px;*/
+    /*line-height: 46px;*/
+    /*text-align: center;*/
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    /*padding: 0;*/
+    /*background: #f53502;*/
+    /*border-radius: 0 8px*/
+/*}*/
 
 .button-last-cases a:hover {
     background: url('../src/nav-bg.png') no-repeat left -46px;
@@ -311,11 +352,11 @@ ul {
 .cases .flex-item a:hover h2 {
     display: inline-block;
     font-weight: 600;
-    color: red;
+    color: #f53502;
 }
 
 .cases .tags a:hover .label-primary {
-    background-color: red;
+    background-color: #f53502;
 }
 
 .cases .tags .label-primary {
@@ -336,8 +377,8 @@ ul {
 .pagination > .active > a,
 .pagination > .active > a:hover,
 .pagination > .active > a:focus {
-    background-color: red;
-    border-color: red;
+    background-color: #f53502;
+    border-color: #f53502;
     border-color: white;
 }
 
@@ -348,7 +389,7 @@ ul {
 
 .pagination > li > a:hover {
     color: white;
-    background-color: red;
+    background-color: #f53502;
 }
 
 
@@ -362,7 +403,6 @@ ul {
 .data, .case .btn-default { float: right; }
 .case .btn-default {
     border: 0;
-    border-radius: 0;
 }
 .case .tags { padding-top: 10px; }
 

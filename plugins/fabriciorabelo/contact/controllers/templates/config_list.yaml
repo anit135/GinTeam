@@ -1,0 +1,39 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: plugins/fabriciorabelo/contact/models/template/columns.yaml
+
+# Model Class name
+modelClass: FabricioRabelo\Contact\Models\Template
+
+# List Title
+title: fabriciorabelo.contact::lang.controllers.templates.config_list.title
+
+# Link URL for each record
+recordUrl: fabriciorabelo/contact/templates/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Display setup column fields
+showSetup: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+
+

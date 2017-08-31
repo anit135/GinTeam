@@ -1,0 +1,17 @@
+subject = "Trip page :: {{ subject }}"
+==
+Hi {{ sender_name }},
+A user left a message on your website at {{ 'now'|date('F, d Y H:i') }}.
+Name: {{ name }}
+Email: {{ email }}
+Phone: {{ phone }}
+Trip name: {{ subject }}
+Trip date:{{ date }}
+==
+<p>Hi {{ sender_name }},</p>
+<p>A user left a message on your website at {{ 'now'|date('F, d Y H:i') }}.</p>
+<div><strong>Name:</strong> {{ name }}</div>
+<div><strong>Email:</strong> {{ email }}</div>
+<div><strong>Phone:</strong> {{ phone }}</div>
+<div><strong>Trip name:</strong> {{ subject }}</div>
+<div><strong>Trip date:</strong>{{ date }}</div>

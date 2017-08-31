@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: fabriciorabelo.contact::lang.controllers.recipients.config_form.name
+form: plugins/fabriciorabelo/contact/models/recipient/fields.yaml
+modelClass: FabricioRabelo\Contact\Models\Recipient
+defaultRedirect: fabriciorabelo/contact/recipients
+
+create:
+    redirect: fabriciorabelo/contact/recipients/update/:id
+    redirectClose: fabriciorabelo/contact/recipients
+
+update:
+    redirect: fabriciorabelo/contact/recipients
+    redirectClose: fabriciorabelo/contact/recipients

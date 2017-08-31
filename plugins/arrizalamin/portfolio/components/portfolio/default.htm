@@ -55,7 +55,7 @@
         {% for tag in item.tags %}
         {{selectedTag}}
         <a href="/tag/{{ tag.name }}">
-            <span class="label label-primary" {% if tag.name == selectTag %} style="background-color: red" {% endif %}>{{ tag.name }}</span>
+            <span class="label label-primary" {% if tag.name == selectTag %} style="background-color: #f53502" {% endif %}>{{ tag.name }}</span>
         </a>
         {% endfor %}
         {% endif %}

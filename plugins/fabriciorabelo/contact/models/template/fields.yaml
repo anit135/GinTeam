@@ -1,0 +1,175 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  title:
+    label: fabriciorabelo.contact::lang.models.templates.fields.label.title
+    placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.title
+    span: auto
+
+  subject:
+    label: fabriciorabelo.contact::lang.models.templates.fields.label.subject
+    placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.subject
+    span: auto
+
+# tabs:
+#   fields:
+
+#     excerpt:
+#       tab: Details
+#       label: Excerpt
+#       type: textarea
+#       size: small
+
+tabs:
+  fields:
+    content_html:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.body
+      type: codeeditor
+      language: twig
+      size: huge
+
+    sender_name:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.sender_name
+      type: text
+      span: auto
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.sender_name
+
+    sender_email:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.sender_email
+      type: text
+      span: auto
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.sender_email
+
+    multiple_recipients:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.multiple_recipients
+      comment: fabriciorabelo.contact::lang.models.templates.fields.comment.multiple_recipients
+      type: checkbox
+
+    recipients:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recipients
+      type: relation
+      commentAbove: fabriciorabelo.contact::lang.models.templates.fields.commentAbove.recipients
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.recipients
+
+    recipient_name:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recipient_name
+      type: text
+      span: auto
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.recipient_name
+
+    recipient_email:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.destinations
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recipient_email
+      type: text
+      span: auto
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.recipient_email
+
+    fields:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.fields
+      comment: fabriciorabelo.contact::lang.models.templates.fields.comment.fields
+      type: text
+      span: auto
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.fields
+
+    autoresponse:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.autoresponse
+      comment: fabriciorabelo.contact::lang.models.templates.fields.comment.autoresponse
+      type: checkbox
+      span: auto
+
+    spam:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.spam
+      comment: fabriciorabelo.contact::lang.models.templates.fields.comment.spam
+      type: checkbox
+
+    recaptcha_lang:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recaptcha_lang
+      type: dropdown
+      span: auto
+      options:
+        ar: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ar
+        bg: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.bg
+        ca: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ca
+        zh-CN: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.zh-CN
+        zh-TW: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.zh-TW
+        hr: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.hr
+        cs: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.cs
+        da: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.da
+        nl: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.nl
+        en-GB: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.en-GB
+        en: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.en
+        fil: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.fil
+        fi: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.fi
+        fr: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.fr
+        fr-CA: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.fr-CA
+        de: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.de
+        de-AT: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.de-AT
+        de-CH: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.de-CH
+        el: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.el
+        iw: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.iw
+        hi: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.hi
+        hu: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.hu
+        id: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.id
+        it: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.it
+        ja: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ja
+        ko: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ko
+        lv: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.lv
+        lt: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.lt
+        no: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.no
+        fa: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.fa
+        pl: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.pl
+        pt: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.pt
+        pt-BR: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.pt-BR
+        pt-PT: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.pt-PT
+        ro: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ro
+        ru: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.ru
+        sr: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.sr
+        sk: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.sk
+        sl: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.sl
+        es: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.es
+        es-419: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.es-419
+        sv: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.sv
+        th: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.th
+        tr: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.tr
+        uk: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.uk
+        vi: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_lang.vi
+
+    recaptcha_theme:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recaptcha_theme
+      type: dropdown
+      span: auto
+      options:
+        light: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_theme.light
+        dark: fabriciorabelo.contact::lang.models.templates.fields.options.recaptcha_theme.dark
+
+    recaptcha_publickey:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recaptcha_publickey
+      type: text
+      span: auto
+
+    recaptcha_secretkey:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.recaptcha_secretkey
+      type: text
+      span: auto
+
+    confirmation_text:
+      tab: fabriciorabelo.contact::lang.models.templates.fields.tab.options
+      label: fabriciorabelo.contact::lang.models.templates.fields.label.confirmation_text
+      type: textarea
+      size: small
+      placeholder: fabriciorabelo.contact::lang.models.templates.fields.placeholder.confirmation_text

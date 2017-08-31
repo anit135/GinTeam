@@ -1,0 +1,12 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: fabriciorabelo.contact::lang.controllers.logs.config_form.name
+form: plugins/fabriciorabelo/contact/models/log/fields.yaml
+modelClass: FabricioRabelo\Contact\Models\Log
+defaultRedirect: fabriciorabelo/contact/logs
+
+preview:
+    redirect: fabriciorabelo/contact/logs
+    redirectClose: fabriciorabelo/contact/logs

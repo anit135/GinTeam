@@ -1,0 +1,12 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: fabriciorabelo.contact::lang.models.recipient.columns.name
+        searchable: true
+    email:
+        label: fabriciorabelo.contact::lang.models.recipient.columns.email
+        searchable: true

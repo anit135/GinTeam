@@ -1,0 +1,22 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+  title:
+    label: fabriciorabelo.contact::lang.models.templates.columns.title
+    searchable: true
+
+  spam:
+    label: fabriciorabelo.contact::lang.models.templates.columns.spam
+    type: switch
+    searchable: false
+
+  created_at:
+    label: fabriciorabelo.contact::lang.models.templates.columns.created_at
+    type: date
+
+  updated_at:
+    label: fabriciorabelo.contact::lang.models.templates.columns.updated_at
+    type: date
