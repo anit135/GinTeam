@@ -29,9 +29,11 @@ class SeedAllTables extends Seeder {
             . "<div><strong>Fax:</strong> {{ phone }}</div>\r\n"
             . "<div><strong>Message:</strong><hr/></div>\r\n<div>{{ body|raw }}</div>\r\n",
             'fields' => 'name|required, email|required|email, phone|required, body|required',
-            'sender_name' => 'Your Name',
-            'sender_email' => 'youremail@yourwebsite.com',
-            'subject' => 'Contact page :: {{ subject }}',
+            'sender_name' => 'GinTeam',
+            'sender_email' => 'SenderEmail@em.em',
+            'recipient_name' => 'GTinfo',
+            'recipient_email' => 'caelestis.selectio@gmail.com',
+            'subject' => 'Contact page :: Message',
             'confirmation_text' => 'Thank you! Your message has been successfully received, we\'ll return the contact soon.',
         ]);
     }
