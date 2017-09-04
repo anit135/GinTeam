@@ -22,11 +22,13 @@ body {
     position: relative;
 }
 
-.services, .contacts, .cases {
+.services,
+.contacts,
+.cases {
     background: #333;
 }
 
-a {
+a, a:focus {
     color: white;
 }
 
@@ -60,7 +62,9 @@ h2 {
     padding-left: 5px;
 }
 
-.header .nav li a, .case .btn-default, .button-last-cases a {
+.header .nav li a,
+.case .btn-default,
+.button-last-cases a {
     width: 125px;
     color: #f4f4f4;
     font-size: 20px;
@@ -73,7 +77,38 @@ h2 {
     border-radius: 0 8px
 }
 
-.header .nav li a:hover, .header .nav li a.current, .case .btn-default:hover, .button-last-cases a:hover {
+.header .nav li a:hover,
+.header .nav li a.current,
+.case .btn-default:hover,
+.button-last-cases a:hover {
+    color: #333;
+    background: white;
+}
+
+.services .header .logo,
+.contacts .header .logo,
+.cases .header .logo {
+    background: url("/themes/demo/assets/src/logo-small.png");
+    height: 71px;
+    width: 266px;
+}
+.home .header .logo {
+    height: 71px;
+    width: 266px;
+
+}
+.last-cases .header .logo {
+    background: url("/themes/demo/assets/src/logo-small-black.png");
+    height: 71px;
+    width: 266px;
+
+}
+
+.services .header [data-menuanchor='services'] a,
+.home .header [data-menuanchor='home'] a,
+.contacts .header [data-menuanchor='contacts'] a,
+.last-cases .header [data-menuanchor='cases'] a,
+.cases .header [data-menu='cases'] a {
     color: #333;
     background: white;
 }
@@ -141,7 +176,7 @@ h2 {
     font-weight: normal;
     color: #f4f4f4;
     font-size: 20px;
-    margin: 0 0 15px 0;
+    margin-top: 0;
 }
 
 ul {
@@ -175,7 +210,8 @@ ul {
     text-decoration: none;
 }
 
-.contacts input, .contacts textarea {
+.contacts input,
+.contacts textarea {
     width: 100%;
     color: rgb(51, 51, 51);
     padding: 6px;
@@ -190,22 +226,27 @@ ul {
     color: white;
     font-size: 15px;
     border: 0;
-    padding: 0 0 0 20px;
+    padding: 0;
 }
 
-.contacts .btn-clear a {
+.contacts .btn-right {
+    text-align: right;
+}
+
+.contacts .btn-clear {
     font-size: 15px;
     padding: 0 0 0 20px;
     border: 0;
 }
 
-.contacts button[type="submit"]:hover, .contacts .btn-clear a:hover {
+.contacts button[type="submit"]:hover,
+.contacts button[type="submit"]:focus,
+.contacts a:hover,
+.contacts a:focus {
     text-decoration: underline;
     color: white;
-    background: #333;
-    /*border: 0;*/
 }
-.contacts #contacts-form label { width: 100%; }
+
 .contacts textarea { height: 80px; }
 
 .contacts .alignright {
@@ -231,7 +272,8 @@ ul {
     margin-top: 60px;
 }
 
-.home .footer, .last-cases .footer {
+.home .footer,
+.last-cases .footer {
     background: url('../src/footer-bg.gif') left top repeat-x;
     color: #282f31;
 }
@@ -285,32 +327,6 @@ ul {
     margin-top: 30px;
 }
 
-/*.button-last-cases a {*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*background: #f53502;*/
-    /*width: 125px;*/
-    /*color: #f4f4f4;*/
-    /*font-size: 20px;*/
-    /*line-height: 46px;*/
-    /*text-transform: uppercase;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*padding: 0;*/
-    /*border-radius: 0 8px*/
-
-    /*width: 125px;*/
-    /*color: #f4f4f4;*/
-    /*font-size: 20px;*/
-    /*line-height: 46px;*/
-    /*text-align: center;*/
-    /*text-transform: uppercase;*/
-    /*font-weight: bold;*/
-    /*padding: 0;*/
-    /*background: #f53502;*/
-    /*border-radius: 0 8px*/
-/*}*/
-
 .button-last-cases a:hover {
     background: url('../src/nav-bg.png') no-repeat left -46px;
     color: #333;
@@ -336,7 +352,7 @@ ul {
 
 .cases .case-img {
     position: relative;
-    height: 17em;
+    height: 15em;
 }
 .cases .img-responsive {
     position: initial;
@@ -345,7 +361,6 @@ ul {
     height: 100%;
 }
 .cases .flex-item a h2 {
-    /*padding-right: 0;*/
     margin-top: 15px;
 }
 
@@ -363,35 +378,39 @@ ul {
     background-color: #999;
 }
 
+.cases .tags a:focus {
+    text-decoration: none;
+}
+
 .cases .footer {
     margin-top: 0;
 }
 .cases-pagination {
     width: 864px;
-    padding: 0 1em;
+    padding-left: 5px;
     align-items: flex-end;
     display: flex;
 }
 
-
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus {
-    background-color: #f53502;
-    border-color: #f53502;
-    border-color: white;
+.pagination {
+    margin-bottom: 12.5px;
+    margin-top: 0;
 }
 
-.pagination > li > a {
+.pagination li a,
+.pagination li a:focus {
     color: white;
     background-color: #999;
 }
 
-.pagination > li > a:hover {
-    color: white;
+.pagination li a:hover,
+.pagination .active a,
+.pagination .active a:hover,
+.pagination .active a:focus {
     background-color: #f53502;
+    border-color: white;
+    color: white;
 }
-
 
 /*===== case =====*/
 
@@ -400,7 +419,10 @@ ul {
     padding: 0 5px;
     height: 100%;
 }
-.data, .case .btn-default { float: right; }
+.data,
+.case .btn-default {
+    float: right;
+}
 .case .btn-default {
     border: 0;
 }
@@ -409,7 +431,10 @@ ul {
 /*===== media =====*/
 
 @media screen and (max-width: 905px) {
-    .cases .header, .flex-content { justify-content: space-around; }
+    .cases .header,
+    .flex-content {
+        justify-content: space-around;
+    }
     .header .nav li a { width: 94px; font-size: 15px; }
     #fullpage .logo-big img { width: 100%; }
     .services .len .form-control { font-size: 15px; }
@@ -424,7 +449,11 @@ ul {
     .cases .flex-item { width: 300px; }
 }
 @media screen and (max-width: 705px) {
-    #fullpage .header, .cases .header { flex-direction: column; align-items: center; }
+    #fullpage .header,
+    .cases .header {
+        flex-direction: column;
+        align-items: center;
+    }
     .cases .header .logo { padding-bottom: 30px; }
     .cases .header .nav li a { width: 95px; font-size: 15px; }
     #fullpage .header img { width: 100%; padding-bottom: 30px; }

@@ -1,18 +1,9 @@
 ==
 <!-- services page begin -->
-<div class="section services" data-anchor="services">
+<div class="section services active" data-anchor="services">
     <div class="inner-page">
         <!-- header begin -->
-        <div class="header">
-            <div class="logo"><a href="#home"><img alt="" src="/themes/demo/assets/src/logo-small.png"></a></div>
-            <ul class="nav">
-                <li data-menuanchor="home"><a href="#home">Home</a></li>
-                <li data-menuanchor="services"><a href="#services" class="current">Services</a></li>
-                <li data-menuanchor="cases"><a href="/#cases">Cases</a></li>
-                <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
-                <div class="len">{% component 'localePicker' %}</div>
-            </ul>
-        </div>
+        {% partial 'header' %}
         <!-- header end -->
         <!-- content end -->
         <div class="flex-content">
@@ -26,7 +17,6 @@
                         industries, from education and real estate to health care, finance, and oil and
                         gas.</p>
                 </div>
-
             </div>
             <div class="line"></div>
             <div class="flex-item">

@@ -13,16 +13,7 @@ tagListPage = "tag"
 <div class="section last-cases" data-anchor="cases">
     <div class="inner-page">
         <!-- header begin -->
-        <div class="header">
-            <div class="logo"><a href="#home"><img alt="" src="themes/demo/assets/src/logo-small-black.png"></a></div>
-            <ul class="nav">
-                <li data-menuanchor="home"><a href="#home">Home</a></li>
-                <li data-menuanchor="services"><a href="#services">Services</a></li>
-                <li data-menuanchor="cases"><a href="/#cases" class="current">Cases</a></li>
-                <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
-                <div class="len">{% component 'localePicker' %}</div>
-            </ul>
-        </div>
+        {% partial 'header' %}
         <!-- header end -->
         <!-- content end -->
         <div class="flex-content">

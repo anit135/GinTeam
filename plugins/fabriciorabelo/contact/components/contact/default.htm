@@ -22,8 +22,10 @@
             <div class="g-recaptcha" data-sitekey="{{ reCaptchaSiteKey }}" data-theme="{{ reCaptchaTheme }}"></div>
         </div>
         {% endif %}
-        <div class="btn-clear"><a href="/" class="btn pull-right">Reset</a></div>
-        <button type="submit" class="btn pull-right">Send</button>
+        <div class="form-group btn-right">
+            <button type="submit" class="btn">Send</button>
+            <a href="/" class="btn btn-clear">Reset</a>
+        </div>
     </div>
 
     <div class="confirm-container">

@@ -2,16 +2,7 @@
 <div class="section contacts" data-anchor="contacts">
     <div class="inner-page">
         <!-- header begin -->
-        <div class="header">
-            <div class="logo"><a href="#home"><img alt="" src="themes/demo/assets/src/logo-small.png"></a></div>
-            <ul class="nav">
-                <li data-menuanchor="home"><a href="#home">Home</a></li>
-                <li data-menuanchor="services"><a href="#services">Services</a></li>
-                <li data-menuanchor="cases"><a href="/#cases">Cases</a></li>
-                <li data-menuanchor="contacts"><a href="#contacts" class="current">Contacts</a></li>
-                <div class="len">{% component 'localePicker' %}</div>
-            </ul>
-        </div>
+        {% partial 'header' %}
         <!-- header end -->
         <!-- content end -->
         <div class="flex-content">
@@ -25,23 +16,6 @@
             <div class="flex-item">
                 <h2>Contact form</h2>
                 {% component 'contact' %}
-                <!-- <form action="" id="contacts-form">
-                    <label><input type="text" value="Name:"
-                                  onfocus="if(this.value==&#39;Name:&#39;){this.value=&#39;&#39;}"
-                                  onblur="if(this.value==&#39;&#39;){this.value=&#39;Name:&#39;}"></label>
-                    <label><input type="text" value="E-mail:"
-                                  onfocus="if(this.value==&#39;E-mail:&#39;){this.value=&#39;&#39;}"
-                                  onblur="if(this.value==&#39;&#39;){this.value=&#39;E-mail:&#39;}"></label>
-                    <label><input type="text" value="Fax:"
-                                  onfocus="if(this.value==&#39;Fax:&#39;){this.value=&#39;&#39;}"
-                                  onblur="if(this.value==&#39;&#39;){this.value=&#39;Fax:&#39;}"></label>
-                    <textarea cols="" rows=""
-                              onfocus="if(this.value==&#39;Message:&#39;){this.value=&#39;&#39;}"
-                              onblur="if(this.value==&#39;&#39;){this.value=&#39;Message:&#39;}">Message:</textarea>
-                    <div class="alignright">
-                        <a href="#" class="link1">Send</a> &nbsp; &nbsp;<a href="#" class="link1">Reset</a>
-                    </div>
-                </form> -->
             </div>
             <div class="line"></div>
             <div class="flex-item">
@@ -66,8 +40,6 @@
         <!-- footer begin -->
         {% partial 'site/footer' %}
         <!-- footer end -->
-
-
     </div>
 </div>
 <!-- contacts page end -->

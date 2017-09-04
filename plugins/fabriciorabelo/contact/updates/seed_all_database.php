@@ -12,6 +12,18 @@ class SeedAllTables extends Seeder {
         // Add a Welcome template or something
         //
 
+// настройки в Settings - Mail configuration
+
+//Sender name - Sender name
+//Sender email - no-reply@ginteam.net
+//Mail method - SMTP
+//SMTP address - smtp.yandex.com
+//SMTP port - 587
+//SMTP encryption protocol - TLS
+//SMTP authorization required - +
+//Username - no-reply@ginteam.net
+//Password - teamgin99
+
         Template::create([
             'title' => 'Contact Page',
             'slug' => 'contact-template',
@@ -30,9 +42,9 @@ class SeedAllTables extends Seeder {
             . "<div><strong>Message:</strong><hr/></div>\r\n<div>{{ body|raw }}</div>\r\n",
             'fields' => 'name|required, email|required|email, phone|required, body|required',
             'sender_name' => 'GinTeam',
-            'sender_email' => 'SenderEmail@em.em',
+            'sender_email' => 'no-reply@ginteam.net',
             'recipient_name' => 'GTinfo',
-            'recipient_email' => 'caelestis.selectio@gmail.com',
+            'recipient_email' => 'info@ginteam.net',
             'subject' => 'Contact page :: Message',
             'confirmation_text' => 'Thank you! Your message has been successfully received, we\'ll return the contact soon.',
         ]);
