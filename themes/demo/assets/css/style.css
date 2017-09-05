@@ -29,7 +29,7 @@ body {
 }
 
 a, a:focus {
-    color: white;
+    color: #fff;
 }
 
 a:hover {
@@ -45,7 +45,7 @@ h2 {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .header-home {
@@ -82,7 +82,7 @@ h2 {
 .case .btn-default:hover,
 .button-last-cases a:hover {
     color: #333;
-    background: white;
+    background: #fff;
 }
 
 .services .header .logo,
@@ -110,7 +110,7 @@ h2 {
 .last-cases .header [data-menuanchor='cases'] a,
 .cases .header [data-menu='cases'] a {
     color: #333;
-    background: white;
+    background: #f4f4f4;
 }
 
 .len .form-control {
@@ -206,7 +206,7 @@ ul {
 }
 
 .contacts .contact-info a:hover  {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -223,7 +223,7 @@ ul {
 
 .contacts button {
     background-color: transparent;
-    color: white;
+    color: #fff;
     font-size: 15px;
     border: 0;
     padding: 0;
@@ -244,7 +244,7 @@ ul {
 .contacts a:hover,
 .contacts a:focus {
     text-decoration: underline;
-    color: white;
+    color: #fff;
 }
 
 .contacts textarea { height: 80px; }
@@ -313,7 +313,7 @@ ul {
 }
 
 .last-tags a:hover .label-primary {
-    background-color: white;
+    background-color: #fff;
     color: black;
 }
 
@@ -345,6 +345,12 @@ ul {
     min-height: 780px;
     margin: 0 -5px;
 }
+
+.cases .flex-content .tags-all {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+}
 .cases .flex-item {
     width: 275px;
     padding: 0 5px;
@@ -362,6 +368,7 @@ ul {
 }
 .cases .flex-item a h2 {
     margin-top: 15px;
+    margin-bottom: 0px;
 }
 
 .cases .flex-item a:hover h2 {
@@ -399,7 +406,7 @@ ul {
 
 .pagination li a,
 .pagination li a:focus {
-    color: white;
+    color: #fff;
     background-color: #999;
 }
 
@@ -408,8 +415,8 @@ ul {
 .pagination .active a:hover,
 .pagination .active a:focus {
     background-color: #f53502;
-    border-color: white;
-    color: white;
+    border-color: #fff;
+    color: #fff;
 }
 
 /*===== case =====*/

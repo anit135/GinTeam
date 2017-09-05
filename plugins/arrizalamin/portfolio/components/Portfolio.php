@@ -15,7 +15,7 @@ class Portfolio extends ComponentBase
      * @var Collection
      */
     public $portfolio;
-
+    public $tags;
     /**
      * Reference to the item page to link items to
      *
@@ -216,6 +216,7 @@ class Portfolio extends ComponentBase
                 $this->portfolio = Item::orderBy('published_at', $this->property('order'))->limit($this->property('itemsPerPage'))->get();
             } else {
                 // display all items
+                $this->tags = Tag::all();
                 $this->portfolio = Item::orderBy('published_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
             }
         } else {
@@ -224,6 +225,7 @@ class Portfolio extends ComponentBase
                 $this->portfolio = $object->items()->orderBy('published_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
             } else {
                 // show the items in the portfolio
+                $this->tags = Tag::all();
                 $this->portfolio = $object->items()->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
             }
         }
