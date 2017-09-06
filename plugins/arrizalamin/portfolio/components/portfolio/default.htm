@@ -36,11 +36,11 @@
 <!-- for page cases -->
 <div class="tags tags-all">
     <a href="/cases">
-        <span class="label label-primary" {% if selectTag is empty %} style="background-color: #f53502" {% endif %}>All</span>
+        <span class="label label-primary" {% if selectTag is empty %} style="background-color: #f53502; color: white" {% endif %}>All</span>
     </a>
     {% for tag in __SELF__.tags %}
     <a href="/tag/{{ tag.name }}">
-        <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502" {% endif %}>{{ tag.name }}</span>
+        <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502; color: white" {% endif %}>{{ tag.name }}</span>
     </a>
     {% endfor %}
 </div>
@@ -64,7 +64,7 @@
         {% if item.tags|length > 0 %}
         {% for tag in item.tags %}
         <a href="/tag/{{ tag.name }}">
-            <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502" {% endif
+            <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502; color: white" {% endif
                   %}>{{ tag.name }}</span>
         </a>
         {% endfor %}
