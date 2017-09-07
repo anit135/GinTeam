@@ -1,7 +1,6 @@
 {{ form_open() }}
-    <select name="locale" data-request="onSwitchLocale" class="form-control">
-        {% for code, name in locales %}
-            <option value="{{ code }}" {{ code == activeLocale ? 'selected' }}>{{ code }}</option>
-        {% endfor %}
-    </select>
+{% for code, name in locales %}
+<a href="#" class="btn-len" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'" {{ code==
+   activeLocale ? 'style="font-weight: bold"' }}>{{ code }}</a>
+{% endfor %}
 {{ form_close() }}
