@@ -36,25 +36,27 @@
 <!-- for page cases -->
 <div class="tags tags-all">
     <a href="/cases">
-        <span class="label label-primary" {% if selectTag is empty %} style="background-color: #f53502; color: white" {% endif %}>All</span>
+        <span class="label label-primary" {% if selectTag is empty %} style="background-color: #f53502; color: white" {%
+              endif %}>All</span>
     </a>
     {% for tag in __SELF__.tags %}
     <a href="/tag/{{ tag.name }}">
-        <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502; color: white" {% endif %}>{{ tag.name }}</span>
+        <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502; color: white"
+              {% endif %}>{{ tag.name }}</span>
     </a>
     {% endfor %}
 </div>
 {% for key, item in __SELF__.portfolio %}
 <div class="flex-item">
     <div class="case-img">
-        {% if item.images|length > 0 %}
-        {% set image = item.images.first %}
         <a href="{{ item.pageUrl }}">
+            {% if item.images|length > 0 %}
+            {% set image = item.images.first %}
             <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+            {% else %}
+            <img src="/themes/demo/assets/images/no-image.png" class="img-responsive" alt="No image">
+            {% endif %}
         </a>
-        {% else %}
-        <div class="img-responsive"></div>
-        {% endif %}
     </div>
     <div class="">
         <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
@@ -64,7 +66,8 @@
         {% if item.tags|length > 0 %}
         {% for tag in item.tags %}
         <a href="/tag/{{ tag.name }}">
-            <span class="label label-primary" {% if tag.name== selectTag %} style="background-color: #f53502; color: white" {% endif
+            <span class="label label-primary" {% if tag.name== selectTag %}
+                  style="background-color: #f53502; color: white" {% endif
                   %}>{{ tag.name }}</span>
         </a>
         {% endfor %}
