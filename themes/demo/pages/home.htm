@@ -2,15 +2,20 @@ title = "Home"
 url = "/"
 layout = "default"
 is_hidden = 0
+
+[viewBag]
+
 [localePicker]
+forceUrl = 0
 
 [contact]
 templateId = 1
+responseTemplateId = "fabriciorabelo.contact::contact.autoresponse"
 bodyField = "body"
 responseFieldName = "name"
 responseFieldEmail = "email"
 
-[viewBag]
+[staticPage]
 ==
 <div id="fullpage">
     {% partial 'services' %}
