@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Lang;
 use ArrizalAmin\Portfolio\Models\Item as PortfolioItem;
+use RainLab\Translate\Components\LocalePicker;
 
 class Item extends ComponentBase
 {
@@ -27,11 +28,12 @@ class Item extends ComponentBase
      */
     public $catListPage;
 
+    public $activeText;
 
     public function componentDetails()
     {
         return [
-            'name'        => 'arrizalamin.portfolio::lang.components.item.name',
+            'name' => 'arrizalamin.portfolio::lang.components.item.name',
             'description' => 'arrizalamin.portfolio::lang.components.item.description'
         ];
     }
@@ -40,31 +42,31 @@ class Item extends ComponentBase
     {
         return [
             'item' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.item.properties.item.title',
+                'title' => 'arrizalamin.portfolio::lang.components.item.properties.item.title',
                 'description' => 'arrizalamin.portfolio::lang.components.item.properties.item.description',
-                'type'        => 'dropdown',
-                'default'     => '1',
+                'type' => 'dropdown',
+                'default' => '1',
             ],
             'itemSlug' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.item.properties.itemSlug.title',
+                'title' => 'arrizalamin.portfolio::lang.components.item.properties.itemSlug.title',
                 'description' => 'arrizalamin.portfolio::lang.components.item.properties.itemSlug.description',
-                'type'        => 'string',
-                'default'     => '{{ :item_slug }}',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.advanced',
+                'type' => 'string',
+                'default' => '{{ :item_slug }}',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.advanced',
             ],
             'catListPage' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.title',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.title',
                 'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.catListPage.description',
-                'type'        => 'dropdown',
-                'default'     => 'portfolio/category',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
+                'type' => 'dropdown',
+                'default' => 'portfolio/category',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
             ],
             'tagListPage' => [
-                'title'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.title',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.title',
                 'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.tagListPage.description',
-                'type'        => 'dropdown',
-                'default'     => 'portfolio/tag',
-                'group'       => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
+                'type' => 'dropdown',
+                'default' => 'portfolio/tag',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.links',
             ],
         ];
     }
@@ -103,29 +105,32 @@ class Item extends ComponentBase
 
     public function onRun()
     {
+        $locale = new LocalePicker();
+        $this->activeText = $locale->textLocale();
+
         // Page links
         $this->tagListPage = $this->page['tagListPage'] = $this->property('tagListPage');
         $this->catListPage = $this->page['catListPage'] = $this->property('catListPage');
 
         // find the correct property to select the items with
         $object = null;
-        if($this->property('itemSlug') != null && $this->property('itemSlug') != 'default'){
+        if ($this->property('itemSlug') != null && $this->property('itemSlug') != 'default') {
             $object = $this->loadItemBySlug($this->property('itemSlug'));
-        }elseif ($this->property('item') != null && $this->property('item') != 'None') {
+        } elseif ($this->property('item') != null && $this->property('item') != 'None') {
             $object = $this->loadItemBySlug($this->property('item'));
         }
 
         // check if a valid object has been created
-        if( !$object ){
+        if (!$object) {
             // todo : throw error
             $this->item = null;
-        }else{
+        } else {
             // show the items in the portfolio
             $this->item = $object;
         }
 
         // Add url helper to the items
-        if($this->item != null) {
+        if ($this->item != null) {
             $this->item = $this->updatePageUrls($this->item);
         }
     }

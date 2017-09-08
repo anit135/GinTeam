@@ -59,7 +59,7 @@
     <div class="">
         <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
     </div>
-    <small>implement on {{ item.published_at|date('j m Y') }}</small>
+    <small>{{ __SELF__.activeText }} {{ item.published_at|date('j m Y') }}</small>
     <div class="tags">
         {% if item.tags|length > 0 %}
         {% for tag in item.tags %}

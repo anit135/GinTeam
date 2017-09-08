@@ -13,7 +13,7 @@
 </div>
 <div class="case">
     <div class="data">
-        <small>Finished {{ item.published_at|date('j m Y') }}</small>
+        <small>{{ __SELF__.activeText }} {{ item.published_at|date('j m Y') }}</small>
     </div>
     <h2>{{ item.title }}</h2>
     <p>{{ item.description|raw }}</p>

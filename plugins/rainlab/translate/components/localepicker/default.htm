@@ -1,6 +1,6 @@
 {{ form_open() }}
 {% for code, name in locales %}
 <a href="#" class="btn-len" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'" {{ code==
-   activeLocale ? 'style="font-weight: bold"' }}>{{ code }}</a>
+   activeLocale ? 'style="background: #f53502; color: #ffffff"' }}>{{ code }}</a>
 {% endfor %}
 {{ form_close() }}

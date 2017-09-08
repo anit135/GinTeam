@@ -132,4 +132,14 @@ class LocalePicker extends ComponentBase
 
         return $localeUrl;
     }
+
+    public function textLocale() {
+        $localeText = [
+            'en' => 'Finished',
+            'ru' => 'Завершен',
+            'ua' => 'Завершено'
+        ];
+        $activeLocale = Translator::instance()->getLocale();
+        return $localeText[mb_strtolower($activeLocale)];
+    }
 }

@@ -107,27 +107,6 @@ h2 {
     background: #f4f4f4;
 }
 
-.len {
-    text-transform: uppercase;
-    font-size: 12px;
-    position: relative;
-    bottom: 44px;
-    margin-right: 5px;
-}
-
-.len a,
-.len a:focus .btn-len {
-    padding: 1px 5px;
-    background: #f4f4f4;
-    border-radius: 0 8px;
-    color: #2c3234;
-    text-decoration: none;
-}
-
-.len a:hover {
-    font-weight: bold;
-}
-
 /*===== home page =====*/
 
 .flex-content {
@@ -275,6 +254,30 @@ ul {
     color: #282f31;
 }
 
+
+.len {
+    text-transform: uppercase;
+    font-size: 12px;
+    position: relative;
+    bottom: 44px;
+    margin-right: 5px;
+}
+
+.len a,
+.len a:focus {
+    padding: 1px 5px;
+    background: #f4f4f4;
+    border-radius: 0 8px;
+    color: #2c3234;
+    text-decoration: none;
+}
+
+.len a:hover {
+    background: #f53502;
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /*===== last cases =====*/
 
 .last-cases .flex-content {
@@ -419,7 +422,7 @@ ul {
 /*===== case =====*/
 
 .case {
-    width: 420px;
+    width: 48%;
     padding: 0 5px;
     height: 100%;
     color: #2e3436;
@@ -435,31 +438,96 @@ ul {
 
 /*===== media =====*/
 
-@media screen and (max-width: 905px) {
-    .cases .header,
-    .flex-content {
-        justify-content: space-around;
+@media screen and (max-width: 875px) {
+    .header .nav li a,
+    .last-cases .button-last-cases a {
+        width: 94px;
+        font-size: 15px;
     }
-    .header .nav li a { width: 94px; font-size: 15px; }
     #fullpage .logo-big img { width: 100%; }
-    .services .len .form-control { font-size: 15px; }
 }
+
 @media screen and (max-width: 775px) {
-    .cases .header { flex-direction: column; align-items: center; }
-    .cases .header .logo { padding-bottom: 30px; }
-    .cases .header .nav li a { width: 140px; font-size: 20px; }
-    #fullpage .header img { width: 200px; }
+    #fullpage .section .header .nav,
+    .cases .header .nav { padding-top: 10px; }
     #fullpage .flex-content { height: 300px; }
     #fullpage .flex-content-home { height:100%; }
-    .cases .flex-item { width: 300px; }
+    .cases .flex-content { justify-content: space-around; }
 }
-@media screen and (max-width: 705px) {
+
+@media screen and (max-width: 715px) {
     #fullpage .header,
     .cases .header {
         flex-direction: column;
-        align-items: center;
     }
-    .cases .header .logo { padding-bottom: 30px; }
-    .cases .header .nav li a { width: 95px; font-size: 15px; }
-    #fullpage .header img { width: 100%; padding-bottom: 30px; }
+    .cases .header { align-items: center; }
+    .home .header .logo {
+        height: 0;
+        width: 0;
+    }
+    .cases .header .nav li a {
+        width: 125px;
+        font-size: 20px;
+    }
+    #fullpage .services .flex-content,
+    #fullpage .contacts .flex-content {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #fullpage .services .flex-item,
+    #fullpage .contacts .flex-item {
+        width: 100%;
+    }
+    #fullpage .services .flex-item:nth-child(3),
+    #fullpage .services .flex-item:nth-child(5),
+    #fullpage .contacts .flex-item:nth-child(3),
+    #fullpage .contacts .flex-item:nth-child(5) {
+        width: 45%;
+    }
+    .services .line:nth-child(2),
+    .contacts .line:nth-child(2) {
+        width: 0; border: 0;
+    }
+    .services .line:nth-child(4),
+    .contacts .line:nth-child(4) {
+        height: auto;
+    }
+    .last-cases .flex-item { width: 46%; }
+    .last-cases .line:nth-child(4),
+    .last-cases .flex-item:nth-child(5) {
+        display: none;
+    }
+    .case { width: 100%; }
+    .case:last-child { padding-bottom: 15px; }
+}
+
+@media screen and (max-width: 575px) {
+    .header .nav {
+        padding-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .header .nav li {
+        padding-left: 0;
+        width: 23%;
+    }
+    .cases .header .nav li a,
+    .header .nav li a {
+        font-size: 1em;
+        width: 100%;
+        line-height: 3.5em;
+    }
+    #fullpage .services .flex-item:nth-child(3),
+    #fullpage .services .flex-item:nth-child(5),
+    #fullpage .contacts .flex-item:nth-child(3),
+    #fullpage .contacts .flex-item:nth-child(5) {
+        width: 100%;
+    }
+    .contacts input,
+    .contacts textarea {
+        height: 20px;
+        width: 80%;
+    }
+    .contacts textarea { height: 40px; }
+    .contacts .form-group { margin-bottom: 0; }
 }
