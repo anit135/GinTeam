@@ -28,7 +28,7 @@ class Item extends ComponentBase
      */
     public $catListPage;
 
-    public $activeText;
+    public $activeTextFinished;
 
     public function componentDetails()
     {
@@ -106,8 +106,7 @@ class Item extends ComponentBase
     public function onRun()
     {
         $locale = new LocalePicker();
-        $this->activeText = $locale->textLocale();
-
+        $this->activeTextFinished = $locale->textLocaleFinished();
         // Page links
         $this->tagListPage = $this->page['tagListPage'] = $this->property('tagListPage');
         $this->catListPage = $this->page['catListPage'] = $this->property('catListPage');

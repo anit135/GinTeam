@@ -32,7 +32,9 @@
 <script src="{{ 'assets/javascript/fullpage/jquery.fullPage.min.js'|theme }}"></script>
 <script>
     $(document).ready(function () {
-        $('#fullpage').fullpage({});
+        $('#fullpage').fullpage({
+            responsiveWidth: 575
+        });
     });
 </script>
 {% framework extras %}

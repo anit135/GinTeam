@@ -45,7 +45,7 @@ class Portfolio extends ComponentBase
      */
     public $useAsPreviewBlock;
 
-    public $activeText;
+    public $activeTextFinished;
 
     /**
      * Component Details
@@ -197,7 +197,7 @@ class Portfolio extends ComponentBase
     public function onRun()
     {
         $locale = new LocalePicker();
-        $this->activeText = $locale->textLocale();
+        $this->activeTextFinished  = $locale->textLocaleFinished();
 
         // Page links
         $this->itemPage = $this->page['itemPage'] = $this->property('itemPage');

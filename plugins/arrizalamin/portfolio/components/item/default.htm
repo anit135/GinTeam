@@ -1,19 +1,15 @@
 {% set item = __SELF__.item %}
 <div class="case">
     {% if item.images|length > 0 %}
-    {% set image = item.images.first %}
-    <div class="blokimg">
-        <div class="overlay" id="contenedor1">
-            <div class="overlay_container">
-                <a href="#close">
-                    <img src="{{ image.path }}"/>
-                </a>
-            </div>
-        </div>
-        <a href="#contenedor1">
-            <img class="img-responsive" src="{{ image.path }}" id="imagenM1" />
-        </a>
+
+    {% if item.images[1] is defined %}
+    <div class="hovergallery">
+        <img class="img-responsive-1" src="{{ item.images[1].path }}" />
     </div>
+    {% else %}
+    <img class="img-responsive-0" src="{{ item.images[0].path }}" />
+    {% endif %}
+
     {% else %}
     <img src="/themes/demo/assets/images/no-image.png" class="img-responsive" alt="No image">
     {% endif %}
@@ -27,7 +23,7 @@
 </div>
 <div class="case">
     <div class="data">
-        <small>{{ __SELF__.activeText }} {{ item.published_at|date('j m Y') }}</small>
+        <small>{{ __SELF__.activeTextFinished }} {{ item.published_at|date('j m Y') }}</small>
     </div>
     <h2>{{ item.title }}</h2>
     <p>{{ item.description|raw }}</p>

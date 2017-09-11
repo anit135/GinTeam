@@ -133,7 +133,7 @@ class LocalePicker extends ComponentBase
         return $localeUrl;
     }
 
-    public function textLocale() {
+    public function textLocaleFinished() {
         $localeText = [
             'en' => 'Finished',
             'ru' => 'Завершен',
