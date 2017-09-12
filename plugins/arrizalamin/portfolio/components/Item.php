@@ -4,7 +4,6 @@ use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Lang;
 use ArrizalAmin\Portfolio\Models\Item as PortfolioItem;
-use RainLab\Translate\Components\LocalePicker;
 
 class Item extends ComponentBase
 {
@@ -27,8 +26,6 @@ class Item extends ComponentBase
      * @var
      */
     public $catListPage;
-
-    public $activeTextFinished;
 
     public function componentDetails()
     {
@@ -105,8 +102,6 @@ class Item extends ComponentBase
 
     public function onRun()
     {
-        $locale = new LocalePicker();
-        $this->activeTextFinished = $locale->textLocaleFinished();
         // Page links
         $this->tagListPage = $this->page['tagListPage'] = $this->property('tagListPage');
         $this->catListPage = $this->page['catListPage'] = $this->property('catListPage');

@@ -8,7 +8,9 @@ item = "proactively"
 itemSlug = "{{ :item_slug }}"
 catListPage = 404
 tagListPage = "tag"
+
 [localePicker]
+forceUrl = 1
 ==
 <div class="cases">
     <div class="inner-page">
@@ -17,7 +19,41 @@ tagListPage = "tag"
         <!-- header end -->
         <!-- content end -->
         <div class="flex-content">
-            {% component 'item' %}
+
+            {% set item = item.item %}
+            <div class="case">
+                {% if item.images|length > 0 %}
+
+                {% if item.images[1] is defined %}
+                <div class="hovergallery">
+                    <img class="img-responsive-1" src="{{ item.images[1].path }}" />
+                </div>
+                {% else %}
+                <img class="img-responsive-0" src="{{ item.images[0].path }}" />
+                {% endif %}
+
+                {% else %}
+                <img src="/themes/demo/assets/images/no-image.png" class="img-responsive" alt="No image">
+                {% endif %}
+                <div class="tags">
+                    {% for tag in item.tags %}
+                    <a href="{{ tag.pageUrl }}">
+                        <span class="label label-primary">{{ tag.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="case">
+                <div class="data">
+                    <small>{{'TextFinished'|_}} {{ item.published_at|date('j m Y') }}</small>
+                </div>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description|raw }}</p>
+                {% if item.url %}
+                <a href="{{ item.url }}" class="btn btn-default" target="_blank">{{'View'|_}}</a>
+                {% endif %}
+            </div>
+
         </div>
         <!-- content end -->
         <!-- footer begin -->

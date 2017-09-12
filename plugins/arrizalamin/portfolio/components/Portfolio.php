@@ -6,7 +6,6 @@ use ArrizalAmin\Portfolio\Models\Category;
 use ArrizalAmin\Portfolio\Models\Tag;
 use Cms\Classes\Page;
 use Lang;
-use RainLab\Translate\Components\LocalePicker;
 
 class Portfolio extends ComponentBase
 {
@@ -44,8 +43,6 @@ class Portfolio extends ComponentBase
      * @var
      */
     public $useAsPreviewBlock;
-
-    public $activeTextFinished;
 
     /**
      * Component Details
@@ -196,9 +193,6 @@ class Portfolio extends ComponentBase
      */
     public function onRun()
     {
-        $locale = new LocalePicker();
-        $this->activeTextFinished  = $locale->textLocaleFinished();
-
         // Page links
         $this->itemPage = $this->page['itemPage'] = $this->property('itemPage');
         $this->tagListPage = $this->page['tagListPage'] = $this->property('tagListPage');

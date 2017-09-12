@@ -17,10 +17,40 @@ tagListPage = "tag"
         <!-- header end -->
         <!-- content end -->
         <div class="flex-content">
-            {% component 'portfolio' %}
+
+            {% for key, item in portfolio.portfolio %}
+            <div class="flex-item">
+                <div class="case-img">
+                    {% if item.images|length > 0 %}
+                    {% set image = item.images.first %}
+                    <a href="{{ item.pageUrl }}">
+                        <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+                    </a>
+                    {% else %}
+                    <div class="img-responsive"></div>
+                    {% endif %}
+                </div>
+                <div class="last-title">
+                    <a href="{{ item.pageUrl }}"><h2>{{ item.title }}</h2></a>
+                </div>
+                <div class="last-tags">
+                    {% if item.tags|length > 0 %}
+                    {% for tag in item.tags %}
+                    <a href="{{ tag.pageUrl }}">
+                        <span class="label label-primary">{{ tag.name }}</span>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            {% if key!=2 %}
+            <div class="line"></div>
+            {% endif %}
+            {% endfor %}
+
         </div>
         <div class="button-last-cases">
-            <a href="/cases" >Show All</a>
+            <a href="/cases" >{{'Show All'|_}}</a>
         </div>
         <!-- content end -->
         <!-- footer begin -->
