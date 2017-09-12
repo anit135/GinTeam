@@ -14,7 +14,42 @@
             <div class="line"></div>
             <div class="flex-item">
                 <h2>Contact form</h2>
-                {% component 'contact' %}
+                <form role="form"
+                      data-request="contact::onContactSent"
+                      data-request-update="'contact::confirm': '.confirm-container'"
+                      data-request-success="$('.form-groups').slideUp(1000)">
+
+                    <div class="form-groups">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="" name="name" placeholder="Name:">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="" name="email" placeholder="Email:">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="" name="phone" placeholder="Fax:">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" value="" name="body" placeholder="Message:" cols="30"
+                                      rows="10"></textarea>
+                        </div>
+
+                        {% if renderReCaptcha %}
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ reCaptchaSiteKey }}"
+                                 data-theme="{{ reCaptchaTheme }}"></div>
+                        </div>
+                        {% endif %}
+                        <div class="form-group btn-right">
+                            <button type="submit" class="btn">{{'Send'|_}}</button>
+                            <a href="/" class="btn btn-clear">{{'Reset'|_}}</a>
+                        </div>
+                    </div>
+
+                    <div class="confirm-container">
+                        <!--This will contain the confirmation when the email is successfully sent-->
+                    </div>
+                </form>
             </div>
             <div class="line"></div>
             <div class="flex-item">
