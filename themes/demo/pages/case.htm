@@ -25,15 +25,27 @@ forceUrl = 1
                 {% if item.images|length > 0 %}
 
                 {% if item.images[1] is defined %}
-                <div class="hovergallery">
-                    <img class="img-responsive-1" src="{{ item.images[1].path }}" />
+                <div class="blokimg">
+                    <div class="overlay" id="contenedor1">
+                        <div class="overlay_container">
+                            <a href="#close">
+                                <img src="{{ item.images[1].path }}"/>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#contenedor1">
+                        <img src="{{ item.images[0].path }}" id="imagenM1" />
+                    </a>
+                </div>
+                <div class="blokimg-small">
+                    <img class="img-responsive-0" src="{{ item.images[1].path }}" />
                 </div>
                 {% else %}
                 <img class="img-responsive-0" src="{{ item.images[0].path }}" />
                 {% endif %}
 
                 {% else %}
-                <img src="/themes/demo/assets/images/no-image.png" class="img-responsive" alt="No image">
+                <img src="/themes/demo/assets/images/no-image.png" class="img-responsive-0" alt="No image">
                 {% endif %}
                 <div class="tags">
                     {% for tag in item.tags %}

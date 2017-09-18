@@ -24,7 +24,9 @@ tagListPage = "tag"
                     {% if item.images|length > 0 %}
                     {% set image = item.images.first %}
                     <a href="{{ item.pageUrl }}">
+                        <div class="hovergallery">
                         <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+                        </div>
                     </a>
                     {% else %}
                     <div class="img-responsive"></div>

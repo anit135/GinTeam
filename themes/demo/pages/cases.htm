@@ -42,7 +42,9 @@ forceUrl = 1
                     <a href="{{ item.pageUrl }}">
                         {% if item.images|length > 0 %}
                         {% set image = item.images.first %}
-                        <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+                        <div class="hovergallery">
+                        <img src="{{ image.path }}" class="img-responsive-1" alt="{{ image.title }}">
+                        </div>
                         {% else %}
                         <img src="/themes/demo/assets/images/no-image.png" class="img-responsive" alt="No image">
                         {% endif %}
@@ -55,7 +57,7 @@ forceUrl = 1
                 <div class="tags">
                     {% if item.tags|length > 0 %}
                     {% for tag in item.tags %}
-                    <a href="/tag/{{ tag.name }}">
+                    <a href="{{ tag.pageUrl }}">
                         <span class="label label-primary">{{ tag.name }}</span>
                     </a>
                     {% endfor %}

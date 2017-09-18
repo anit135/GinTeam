@@ -21,19 +21,24 @@
 
                     <div class="form-groups">
                         <div class="form-group">
-                            <input type="text" class="form-control" value="" name="name" placeholder="Name:">
+                            <input type="text" class="form-control" value="" name="name" required="required" placeholder="Name:">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" value="" name="email" placeholder="Email:">
+                            <input type="email" class="form-control" value="" name="email" required="required" placeholder="Email:">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" value="" name="phone" placeholder="Fax:">
+                            <input type="text" class="form-control" value="" name="phone" required="required" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" title="Номер телефона в формате 000-000-0000" placeholder="Fax:">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" value="" name="body" placeholder="Message:" cols="30"
+                            <textarea class="form-control" value="" name="body" required="required" placeholder="Message:" cols="30"
                                       rows="10"></textarea>
                         </div>
 
+                        {% if alerts %}
+                        {% for alert in alerts %}
+                        <div class="error">{{ alert }}</div>
+                        {% endfor %}
+                        {% endif %}
                         {% if renderReCaptcha %}
                         <div class="form-group">
                             <div class="g-recaptcha" data-sitekey="{{ reCaptchaSiteKey }}"
